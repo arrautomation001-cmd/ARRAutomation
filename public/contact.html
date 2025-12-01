@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | ARRAutomation</title>
+    <meta name="description" content="Get in touch for HR Automation and QA Testing services. Replies within 24 hours.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">ARR<span class="text-emerald">Automation</span></a>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="text-emerald">Contact</a></li>
+                <li><a href="login.html" class="btn btn-primary"
+                        style="padding: 0.5rem 1rem; margin-left: 1rem;">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Section (Split Layout) -->
+    <section class="section login-section">
+        <div class="container">
+            <div class="login-grid">
+                <!-- Left Side: Contact Image -->
+                <div class="login-image-container">
+                    <img src="images/contact-hero.png" alt="Contact Us" class="login-team-image">
+                    <div class="login-image-overlay">
+                        <h2>Let's <span class="text-emerald">Talk</span></h2>
+                        <p>Have a project in mind? We'd love to hear from you.</p>
+                        <div style="margin-top: 2rem;">
+                            <p style="margin-bottom: 0.5rem;"><i class="fab fa-whatsapp"></i> +91 70821 67660</p>
+                            <p><i class="fas fa-envelope"></i> arrautomation001@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Contact Form -->
+                <div class="card login-card contact-card">
+                    <h2 class="text-center" style="margin-bottom: 1.5rem;">Get in Touch</h2>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Username</label>
+                            <input type="text" id="name" class="form-input" placeholder="username" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" id="email" class="form-input" placeholder="User@gmail.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="text" id="phone" class="form-input" placeholder="9999xxxxxx" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service" class="form-label">Choose Service</label>
+                            <select id="service" class="form-input">
+                                <option value="hr">HR Automation</option>
+                                <option value="qa">QA Testing</option>
+                                <option value="docs">Business Docs</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Project Information</label>
+                            <textarea id="message" class="form-textarea" rows="4"
+                                placeholder="Tell me about your project..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-3">
+                <div>
+                    <h3>ARR<span class="text-emerald">Automation</span></h3>
+                    <p style="opacity: 0.8;">Affordable QA & HR Automation Partner for Small Businesses.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/md-arounder-1020a0194/" class="social-icon"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/md.arounder/" class="social-icon"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/7082167660" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="services.html">Services</a>
+                        <a href="portfolio.html">Portfolio</a>
+                        <a href="about.html">About</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="login.html">Login</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <div class="footer-links">
+                        <a href="https://wa.me/917082167660"><i class="fab fa-whatsapp"></i> +91 70821 67660</a>
+                        <p class="mail">📧arrautomation001@gmail.com</p>
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.875rem; opacity: 0.6;">Privacy-first. Your data stays
+                        confidential.</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 ARRAutomation. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/917082167660" class="floating-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

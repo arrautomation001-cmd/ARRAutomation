@@ -1,0 +1,52 @@
+ARRAutomation – Sample Deliverable Pack (Preview)
+
+Thank you for checking out our work!
+Below is a small preview of the type of deliverables we provide in Automation, QA, and HR Systems.
+
+--------------------------------------------------
+Test Case Example
+--------------------------------------------------
+Test Case ID: TC_LOGIN_001
+Title: Verify user is able to login with valid credentials.
+Pre-Condition: User has a registered account.
+
+Steps:
+1. Navigate to Login Page.
+2. Enter valid email.
+3. Enter valid password.
+4. Click Login button.
+
+Expected Result:
+User should be redirected to Dashboard successfully.
+
+--------------------------------------------------
+Bug Report Example
+--------------------------------------------------
+Bug ID: BUG_102
+Title: Login button is unresponsive on mobile.
+Severity: High
+
+Description:
+The login button does not register a click event on smaller screens (below 420px).
+
+Steps To Reproduce:
+1. Open website on mobile.
+2. Try clicking "Login".
+3. Nothing happens.
+
+Expected:
+Login process should start normally.
+
+--------------------------------------------------
+Automation Script (Cypress Snippet)
+--------------------------------------------------
+cy.visit('/login');
+cy.get('#email').type('user@example.com');
+cy.get('#password').type('Password123');
+cy.get('#loginBtn').click();
+cy.url().should('include', '/dashboard');
+
+--------------------------------------------------
+Want full sample templates?
+WhatsApp: +91 70821 67660
+--------------------------------------------------
