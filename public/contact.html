@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | ARRAutomation</title>
-    <meta name="description" content="Get in touch for HR Automation and QA Testing services. Replies within 24 hours.">
+    <meta name="description"
+        content="Contact ARRAutomation for HR automation and QA testing services. Share your use case and get a response within 24 hours.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,8 +36,11 @@
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html" class="text-emerald">Contact</a></li>
-                <li><a href="login.html" class="btn btn-primary"
-                        style="padding: 0.5rem 1rem; margin-left: 1rem;">Login</a></li>
+                <li>
+                    <a href="login.html" class="btn btn-primary" style="padding: 0.5rem 1rem; margin-left: 1rem;">
+                        Login
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -47,53 +51,72 @@
             <div class="login-grid">
                 <!-- Left Side: Contact Image -->
                 <div class="login-image-container">
-                    <img src="images/contact-hero.png" alt="Contact Us" class="login-team-image">
+                    <img src="images/contact-hero.png" alt="Contact ARRAutomation" class="login-team-image">
                     <div class="login-image-overlay">
-                        <h2>Let's <span class="text-emerald">Talk</span></h2>
-                        <p>Have a project in mind? We'd love to hear from you.</p>
+                        <h2>Let’s <span class="text-emerald">Talk</span></h2>
+                        <p>Tell me what you want to automate or test, and I’ll help you plan the next step.</p>
                         <div style="margin-top: 2rem;">
-                            <p style="margin-bottom: 0.5rem;"><i class="fab fa-whatsapp"></i> +91 70821 67660</p>
-                            <p><i class="fas fa-envelope"></i> arrautomation001@gmail.com</p>
+                            <p style="margin-bottom: 0.5rem;">
+                                <i class="fab fa-whatsapp"></i> +91 70821 67660
+                            </p>
+                            <p>
+                                <i class="fas fa-envelope"></i> arrautomation001@gmail.com
+                            </p>
+                            <p style="margin-top: 0.75rem; font-size: 0.85rem; opacity: 0.85;">
+                                Typical reply time: under 24 hours.
+                            </p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Right Side: Contact Form -->
                 <div class="card login-card contact-card">
-                    <h2 class="text-center" style="margin-bottom: 1.5rem;">Get in Touch</h2>
+                    <h2 class="text-center" style="margin-bottom: 0.5rem;">Get in Touch</h2>
+                    <p class="text-center" style="margin-bottom: 1.5rem; font-size: 0.95rem; color: #6B7280;">
+                        Share a few details about your business and what you need help with. I’ll reply with next steps
+                        or a few options you can choose from.
+                    </p>
                     <form id="contact-form">
                         <div class="form-group">
-                            <label for="name" class="form-label">Username</label>
-                            <input type="text" id="name" class="form-input" placeholder="username" required>
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" id="name" class="form-input" placeholder="Arman / Rahul / Priya"
+                                required>
                         </div>
 
                         <div class="form-group">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="text" id="email" class="form-input" placeholder="User@gmail.com" required>
+                            <label for="email" class="form-label">Work Email</label>
+                            <input type="email" id="email" class="form-input" placeholder="you@company.com" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="phone" class="form-label">Phone</label>
-                            <input type="text" id="phone" class="form-input" placeholder="9999xxxxxx" required>
+                            <label for="phone" class="form-label">Phone / WhatsApp</label>
+                            <input type="tel" id="phone" class="form-input" placeholder="+91 9XXXXXXXXX" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="service" class="form-label">Choose Service</label>
+                            <label for="service" class="form-label">What do you need help with?</label>
                             <select id="service" class="form-input">
-                                <option value="hr">HR Automation</option>
-                                <option value="qa">QA Testing</option>
-                                <option value="docs">Business Docs</option>
-                                <option value="other">Other</option>
+                                <option value="hr">HR Automation (payroll, attendance, HR sheets)</option>
+                                <option value="qa">QA Testing (manual / automation)</option>
+                                <option value="docs">Business Docs (invoices, decks, HR docs)</option>
+                                <option value="other">Not sure / Other</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="message" class="form-label">Project Information</label>
+                            <label for="message" class="form-label">Project / Problem Details</label>
                             <textarea id="message" class="form-textarea" rows="4"
-                                placeholder="Tell me about your project..." required></textarea>
+                                placeholder="Example: We are a small team of 10–20 people. We want to automate payroll and attendance, and also test our web app’s core flows (login, cart, payments)..."
+                                required></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-block">Send</button>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Send Message
+                        </button>
+
+                        <p style="margin-top: 0.75rem; font-size: 0.8rem; opacity: 0.7;">
+                            I will not share your contact details with anyone. This is only for discussing your project.
+                        </p>
                     </form>
                 </div>
             </div>
@@ -106,15 +129,25 @@
             <div class="grid grid-3">
                 <div>
                     <h3>ARR<span class="text-emerald">Automation</span></h3>
-                    <p style="opacity: 0.8;">Affordable QA & HR Automation Partner for Small Businesses.</p>
+                    <p style="opacity: 0.8;">
+                        Affordable QA & HR Automation partner helping small businesses and startups reduce manual work
+                        and ship with confidence.
+                    </p>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/md-arounder-1020a0194/" class="social-icon"><i
-                                class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/md.arounder/" class="social-icon"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/7082167660" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.linkedin.com/in/md-arounder-1020a0194/" class="social-icon"
+                            aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/md.arounder/" class="social-icon" aria-label="Instagram"
+                            target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/917082167660" class="social-icon" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
+
                 <div>
                     <h4>Quick Links</h4>
                     <div class="footer-links">
@@ -125,14 +158,20 @@
                         <a href="login.html">Login</a>
                     </div>
                 </div>
+
                 <div>
                     <h4>Contact</h4>
                     <div class="footer-links">
-                        <a href="https://wa.me/917082167660"><i class="fab fa-whatsapp"></i> +91 70821 67660</a>
-                        <p class="mail">📧arrautomation001@gmail.com</p>
+                        <a href="https://wa.me/917082167660">
+                            <i class="fab fa-whatsapp"></i> +91 70821 67660
+                        </a>
+                        <a href="mailto:arrautomation001@gmail.com" class="mail">
+                            <i class="fas fa-envelope"></i> arrautomation001@gmail.com
+                        </a>
                     </div>
-                    <p style="margin-top: 1rem; font-size: 0.875rem; opacity: 0.6;">Privacy-first. Your data stays
-                        confidential.</p>
+                    <p style="margin-top: 1rem; font-size: 0.875rem; opacity: 0.6;">
+                        Privacy-first. Your data stays confidential.
+                    </p>
                 </div>
             </div>
             <div class="copyright">
@@ -142,7 +181,7 @@
     </footer>
 
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/917082167660" class="floating-whatsapp">
+    <a href="https://wa.me/917082167660" class="floating-whatsapp" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
