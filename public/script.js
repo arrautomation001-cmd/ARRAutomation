@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // ✅ Backend base URL (auto switch local vs live)
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const BASE_URL = isLocal
+        ? 'http://localhost:3000'                           // local dev
+        : 'https://arrautomation-backend.onrender.com';     // Render backend
+
     // Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
@@ -17,11 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Helper to handle API requests
+    // ✅ Helper to handle API requests (now using BASE_URL)
     const apiRequest = async (url, data) => {
         try {
-            // Ensure we hit the backend server on port 3000
-            const fullUrl = url.startsWith('http') ? url : `http://localhost:3000${url}`;
+            const fullUrl = url.startsWith('http') ? url : `${BASE_URL}${url}`;
             const response = await fetch(fullUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -45,11 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
 
             const data = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                service: document.getElementById('service').value,
-                message: document.getElementById('message').value
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim().toLowerCase(),
+                phone: document.getElementById('phone').value.trim(),
+                service: document.getElementById('service').value.trim(),
+                message: document.getElementById('message').value.trim()
             };
 
             const result = await apiRequest('/api/contact', data);
@@ -95,9 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
 
             const data = {
-                name: document.getElementById('signup-name').value,
-                mobile: document.getElementById('signup-mobile').value,
-                email: document.getElementById('signup-email').value,
+                name: document.getElementById('signup-name').value.trim(),
+                mobile: document.getElementById('signup-mobile').value.trim(),
+                email: document.getElementById('signup-email').value.trim().toLowerCase(),
                 password: document.getElementById('signup-password').value
             };
 
@@ -124,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
 
             const data = {
-                email: document.getElementById('login-email').value,
+                email: document.getElementById('login-email').value.trim().toLowerCase(),
                 password: document.getElementById('login-password').value
             };
 
