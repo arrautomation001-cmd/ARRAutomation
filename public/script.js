@@ -85,32 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Login Form Logic
-    const loginForm = document.getElementById('login-form');
-    if (loginForm) {
-        loginForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const submitBtn = loginForm.querySelector('button');
-            submitBtn.innerText = 'Logging in...';
-            submitBtn.disabled = true;
-
-            const data = {
-                email: document.getElementById('login-email').value,
-                password: document.getElementById('login-password').value
-            };
-
-            const result = await apiRequest('/api/login', data);
-
-            alert(result.message);
-            if (result.success) {
-                window.location.href = 'index.html';
-            }
-
-            submitBtn.innerText = 'Login';
-            submitBtn.disabled = false;
-        });
-    }
-
     // Signup Form Logic
     const signupForm = document.getElementById('signup-form');
     if (signupForm) {
@@ -139,4 +113,51 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = false;
         });
     }
+
+    // Login Form Logic
+    const loginForm = document.getElementById('login-form');
+    if (loginForm) {
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = loginForm.querySelector('button');
+            submitBtn.innerText = 'Logging in...';
+            submitBtn.disabled = true;
+
+            const data = {
+                email: document.getElementById('login-email').value,
+                password: document.getElementById('login-password').value
+            };
+
+            const result = await apiRequest('/api/login', data);
+
+            alert(result.message);
+            if (result.success) {
+                window.location.href = 'index.html';
+            }
+
+            submitBtn.innerText = 'Login';
+            submitBtn.disabled = false;
+        });
+    }
+
+    // Password Toggle Functionality
+    const togglePasswordButtons = document.querySelectorAll('.toggle-password');
+
+    togglePasswordButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetId = button.getAttribute('data-target');
+            const passwordInput = document.getElementById(targetId);
+            const icon = button.querySelector('i');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+    });
 });
