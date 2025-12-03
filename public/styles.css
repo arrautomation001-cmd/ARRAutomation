@@ -811,3 +811,84 @@ img {
     transform: translateY(-5px);
     border: 1px solid var(--color-emerald);
 }
+/* =========================
+   Password Toggle Styles
+   ========================= */
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper .form-input {
+    padding-right: 3rem;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    color: var(--color-text-body);
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+    font-size: 1.1rem;
+}
+
+.toggle-password:hover {
+    color: var(--color-emerald);
+}
+
+.toggle-password:focus {
+    outline: none;
+}
+
+.toggle-password i {
+    pointer-events: none;
+}
+
+/* =========================
+   Auth Tabs and Forms
+   ========================= */
+.auth-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #E5E7EB;
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    color: var(--color-text-body);
+    font-weight: 500;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.auth-tab:hover {
+    color: var(--color-emerald);
+    background-color: rgba(28, 175, 93, 0.05);
+}
+
+.auth-tab.active {
+    color: var(--color-emerald);
+    border-bottom-color: var(--color-emerald);
+    font-weight: 600;
+}
+
+.auth-form {
+    display: none;
+}
+
+.auth-form.active {
+    display: block;
+}
