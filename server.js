@@ -197,7 +197,7 @@ app.post('/api/contact', async (req, res) => {
 
         // Admin email
         sendEmail(
-            'arounder263@gmail.com',
+            'arrautomation001@gmail.com',
             `New Inquiry: ${service.toUpperCase()}`,
             `<p><strong>From:</strong> ${name} (${email})</p>
              <p><strong>Service:</strong> ${service}</p>
