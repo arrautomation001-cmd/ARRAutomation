@@ -221,6 +221,15 @@ app.post('/api/contact', async (req, res) => {
 
 
 // =============================================
+// 🔹 Route 4: Serve sitemap.xml explicitly
+// =============================================
+app.get('/sitemap.xml', (req, res) => {
+    res.type('application/xml');
+    res.sendFile(path.join(__dirname, 'public', 'sitemap.xml'));
+});
+
+
+// =============================================
 // 6. Start the Server
 // =============================================
 app.listen(PORT, () => {
