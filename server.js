@@ -21,6 +21,7 @@ const sendEmail = require('./email');
 
 // Initialize app
 const app = express();
+app.use(express.static('public'));
 const PORT = process.env.PORT || 3000;
 
 
