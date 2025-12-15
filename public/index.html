@@ -3,6 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SSYB7E85VW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-SSYB7E85VW');
+    </script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARRAutomation | QA & HR Automation Partner</title>
     <meta name="description"
@@ -108,7 +118,8 @@
 
                     <div class="hero-buttons">
                         <a href="https://chat.whatsapp.com/Dwqh72hxsFN5CGbCUjvBie" class="btn btn-primary"
-                            style="background-color: #25D366; display: inline-flex; align-items: center; gap: 0.5rem;">
+                            style="background-color: #25D366; display: inline-flex; align-items: center; gap: 0.5rem;"
+                            onclick="gtag('event','whatsapp_click',{event_category:'engagement',event_label:'homepage'});">
                             <i class="fab fa-whatsapp"></i>
                             Chat on WhatsApp – Free QA & HR Automation Consultation
                         </a>
