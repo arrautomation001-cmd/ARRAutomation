@@ -19,6 +19,10 @@ const Contact = require('./models/Contact');
 // Email Sender (Resend-based function)
 const sendEmail = require('./email');
 
+// Gemini AI Setup
+const { GoogleGenerativeAI } = require('@google/generative-ai');
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+
 // Initialize app
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -221,7 +225,59 @@ app.post('/api/contact', async (req, res) => {
 
 
 // =============================================
-// 🔹 Route 4: Serve sitemap.xml explicitly
+// 🔹 Route 4: AI Bug Formatter
+// =============================================
+app.post('/api/format-bug', async (req, res) => {
+    try {
+        const { note } = req.body;
+
+        if (!note || note.trim().length < 5) {
+            return res.status(400).json({ success: false, message: 'Please provide a clearer testing note.' });
+        }
+
+        if (!process.env.GEMINI_API_KEY || process.env.GEMINI_API_KEY === 'your_api_key_here') {
+            return res.status(500).json({ success: false, message: 'AI service is currently not configured. Please contact the administrator.' });
+        }
+
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+        const prompt = `
+            You are a professional Senior QA Engineer. 
+            I will provide you with a messy, informal testing note about a bug. 
+            Your task is to convert it into a highly professional, structured bug report.
+
+            Please return your response as a valid JSON object with the following fields:
+            1. title: A concise, professional title for the bug.
+            2. steps: An array of steps to reproduce the bug.
+            3. expected: What was supposed to happen.
+            4. actual: What actually happened.
+            5. severity: Suggest a severity (Low, Medium, High, Critical).
+
+            Testing Note:
+            "${note}"
+        `;
+
+        const result = await model.generateContent(prompt);
+        const responseText = result.response.text();
+
+        // Clean up the response text - sometimes Gemini returns it wrapped in ```json ... ```
+        const jsonMatch = responseText.match(/\{[\s\S]*\}/);
+        if (!jsonMatch) {
+            throw new Error('AI failed to return valid JSON structure.');
+        }
+
+        const formattedBug = JSON.parse(jsonMatch[0]);
+        res.json({ success: true, bug: formattedBug });
+
+    } catch (error) {
+        console.error('AI Bug Formatter Error:', error);
+        res.status(500).json({ success: false, message: 'Failed to format bug with AI.' });
+    }
+});
+
+
+// =============================================
+// 🔹 Route 5: Serve sitemap.xml explicitly
 // =============================================
 app.get('/sitemap.xml', (req, res) => {
     res.type('application/xml');

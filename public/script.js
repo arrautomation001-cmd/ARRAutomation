@@ -223,4 +223,95 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+
+    // ======================================================
+    // 9️⃣ AI BUG FORMATTER TOOL
+    // ======================================================
+    const formatBtn = document.getElementById('format-bug-btn');
+    const bugInput = document.getElementById('ai-bug-input');
+    const bugOutput = document.getElementById('ai-bug-output');
+    const outputContainer = document.getElementById('ai-bug-output-container');
+    const placeholder = document.getElementById('ai-bug-placeholder');
+    const copyBtn = document.getElementById('copy-bug-btn');
+
+    if (formatBtn && bugInput) {
+        formatBtn.addEventListener('click', async () => {
+            const note = bugInput.value.trim();
+
+            if (note.length < 5) {
+                alert('Please enter a more detailed testing note.');
+                return;
+            }
+
+            // UI Loading state
+            formatBtn.disabled = true;
+            formatBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing with AI...';
+
+            const result = await apiRequest('/api/format-bug', { note });
+
+            if (result.success && result.bug) {
+                const b = result.bug;
+
+                // Build the structured HTML
+                let html = `
+                    <div style="margin-bottom: 1rem; border-bottom: 2px solid var(--color-emerald); padding-bottom: 0.5rem;">
+                        <strong style="color: var(--color-navy); font-size: 1.1rem;">${b.title}</strong>
+                        <span style="float: right; font-size: 0.75rem; background: ${getSeverityColor(b.severity)}; color: white; padding: 2px 8px; border-radius: 12px; font-weight: 600;">
+                            ${b.severity}
+                        </span>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <strong style="display: block; margin-bottom: 0.25rem;">Steps to Reproduce:</strong>
+                        <ol style="margin: 0; padding-left: 1.25rem;">
+                            ${b.steps.map(s => `<li style="margin-bottom: 0.25rem;">${s}</li>`).join('')}
+                        </ol>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <strong>Expected Result:</strong>
+                        <p style="margin: 0;">${b.expected}</p>
+                    </div>
+                    <div>
+                        <strong>Actual Result:</strong>
+                        <p style="margin: 0;">${b.actual}</p>
+                    </div>
+                `;
+
+                bugOutput.innerHTML = html;
+
+                // Switch UI visibility
+                placeholder.style.display = 'none';
+                outputContainer.style.display = 'block';
+
+            } else {
+                alert(result.message || 'AI formatting failed. Please check your API key.');
+            }
+
+            formatBtn.disabled = false;
+            formatBtn.innerHTML = '<i class="fas fa-magic" style="margin-right: 0.5rem;"></i> Format with AI';
+        });
+
+        // Copy functionality
+        if (copyBtn) {
+            copyBtn.addEventListener('click', () => {
+                const text = bugOutput.innerText;
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalText = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    setTimeout(() => {
+                        copyBtn.innerHTML = originalText;
+                    }, 2000);
+                });
+            });
+        }
+    }
+
+    // Helper to color-code severity
+    function getSeverityColor(sev) {
+        const s = String(sev).toLowerCase();
+        if (s.includes('critical')) return '#DC2626'; // Red
+        if (s.includes('high')) return '#EA580C';     // Orange
+        if (s.includes('medium')) return '#D97706';   // Yellow/Amber
+        return '#059669';                             // Green
+    }
+
 });
