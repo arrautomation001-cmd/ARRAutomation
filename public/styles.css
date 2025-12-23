@@ -230,6 +230,11 @@ img {
     color: var(--text-inverse);
 }
 
+.bg-light-green {
+    background-color: #f0fdf4;
+    /* Light emerald tint */
+}
+
 /* =========================
    Grid Utilities
    ========================= */
@@ -260,6 +265,17 @@ img {
 /* =========================
    Buttons
    ========================= */
+
+.bg-light-green .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.bg-light-green .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+    /* Shining green effect */
+}
 
 .btn {
     display: inline-flex;
