@@ -2,12 +2,11 @@
 // Customer Support Chatbot JavaScript
 // ==========================================
 
-// Use current origin if connected to same server, otherwise fallback to localhost:3000 for dev separate running
-const BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-    ? 'http://localhost:3000' // Ensure port 3000 for local dev
-    : window.location.origin; // Use relative path in production
-
-
+const BASE_URL =
+    window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+        ? 'http://localhost:3000'
+        : 'https://arrautomation-backend-rqcz.onrender.com';
+    
 class Chatbot {
     constructor() {
         this.conversationHistory = [];
