@@ -633,39 +633,7 @@ img {
     opacity: 0.7;
 }
 
-/* =========================
-   Floating WhatsApp Button
-   ========================= */
-.floating-whatsapp {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25D366;
-    color: #FFFFFF;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--shadow-medium);
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    z-index: 1100;
-}
 
-.floating-whatsapp:hover {
-    transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-    .floating-whatsapp {
-        bottom: 15px;
-        right: 15px;
-        width: 50px;
-        height: 50px;
-        font-size: 1.25rem;
-    }
-}
 
 /* =========================
    Portfolio / Preview Styles
