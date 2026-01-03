@@ -168,6 +168,7 @@ class Chatbot {
         this.showTypingIndicator();
 
         try {
+            console.log("CB BASE_URL =", BASE_URL);
             const response = await fetch(`${BASE_URL}/api/chatbot`, {
                 method: 'POST',
                 headers: {
