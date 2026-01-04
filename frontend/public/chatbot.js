@@ -2,10 +2,10 @@
 // Customer Support Chatbot JavaScript
 // ==========================================
 
-const BASE_URL =
-    window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-        ? 'http://localhost:3000'
-        : 'https://arrautomation-backend-rqcz.onrender.com';
+const BASE_URL = 'https://arrautomation-backend-rqcz.onrender.com';
+    // window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    //     ? 'http://localhost:3000'
+    //     : 'https://arrautomation-backend-rqcz.onrender.com';
     
 class Chatbot {
     constructor() {
@@ -180,7 +180,13 @@ class Chatbot {
                 }),
             });
 
+            if (!response.ok) {
+            const text = await response.text();
+            console.error('CB raw response:', text);
+            throw new Error(`HTTP ${response.status}`);
+            }
             const data = await response.json();
+
 
             // Hide typing indicator
             this.hideTypingIndicator();
