@@ -1,7 +1,7 @@
 ARRAutomation – Sample Deliverable Pack (Preview)
 
 Thank you for checking out our work!
-Below is a small preview of the type of deliverables we provide in Automation, QA, and HR Systems.
+Below is a small preview of the type of deliverables we provide in Automation, QA, and Email Marketing Systems.
 
 --------------------------------------------------
 Test Case Example

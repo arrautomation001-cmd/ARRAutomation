@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | ARRAutomation</title>
-    <meta name="description" content="Login to access your dashboard and project files.">
+    <title>Client Login | ARRAutomation</title>
+    <meta name="description" content="Login to access your QA testing reports, email marketing dashboards, and project files. Secure client portal for ARRAutomation customers.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,8 +35,7 @@
                 <li><a href="services.html">Services</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <!-- Login button removed on this page to avoid duplication -->
+                <!-- FIXED: Removed contact.html reference -->
             </ul>
         </div>
     </nav>
@@ -50,7 +49,23 @@
                     <img src="images/automation-team.png" alt="Automation Team" class="login-team-image">
                     <div class="login-image-overlay">
                         <h2>Welcome to ARR<span class="text-emerald">Automation</span></h2>
-                        <p>Your trusted partner for QA Testing &amp; HR Automation solutions</p>
+                        <p>Your trusted partner for QA Testing & Email Marketing solutions</p>
+                        
+                        <!-- ADDED: Trust elements -->
+                        <div style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.95;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Secure & Encrypted Login</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                                <i class="fas fa-users"></i>
+                                <span>50+ Active Clients</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fas fa-clock"></i>
+                                <span>24/7 Dashboard Access</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -64,7 +79,10 @@
 
                     <!-- Login Form -->
                     <form id="login-form" class="auth-form active">
-                        <h2 class="text-center" style="margin-bottom: 1.5rem;">Welcome Back</h2>
+                        <h2 class="text-center" style="margin-bottom: 0.5rem;">Welcome Back</h2>
+                        <p class="text-center" style="margin-bottom: 1.5rem; color: var(--text-secondary); font-size: 0.9rem;">
+                            Access your project dashboard and files
+                        </p>
 
                         <div class="form-group">
                             <label for="login-email" class="form-label">
@@ -83,21 +101,30 @@
                             <div class="password-wrapper">
                                 <input type="password" id="login-password" class="form-input"
                                     placeholder="Enter your password" autocomplete="current-password" required>
-                                <button type="button" class="toggle-password" data-target="login-password">
+                                <button type="button" class="toggle-password" data-target="login-password" title="Toggle password visibility">
                                     <i class="fa-regular fa-eye"></i>
                                 </button>
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-block">Login</button>
-                        <p class="text-center" style="margin-top: 1rem; font-size: 0.875rem;">
-                            <a href="#" style="color: var(--color-emerald);">Forgot Password?</a>
-                        </p>
+                        <button type="submit" class="btn btn-primary btn-block">Login to Dashboard</button>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                            <p style="font-size: 0.875rem;">
+                                <a href="#" style="color: var(--color-emerald);">Forgot Password?</a>
+                            </p>
+                            <p style="font-size: 0.875rem; color: var(--text-secondary);">
+                                <i class="fas fa-lock"></i> Secure Login
+                            </p>
+                        </div>
                     </form>
 
                     <!-- Signup Form -->
                     <form id="signup-form" class="auth-form">
-                        <h2 class="text-center" style="margin-bottom: 1.5rem;">Create Account</h2>
+                        <h2 class="text-center" style="margin-bottom: 0.5rem;">Create Your Account</h2>
+                        <p class="text-center" style="margin-bottom: 1.5rem; color: var(--text-secondary); font-size: 0.9rem;">
+                            Get started with your first project
+                        </p>
 
                         <div class="form-group">
                             <label for="signup-name" class="form-label">
@@ -112,7 +139,7 @@
                                 Mobile Number <span class="text-emerald">*</span>
                             </label>
                             <input type="tel" id="signup-mobile" class="form-input"
-                                placeholder="Enter your mobile number" required autocomplete="tel" pattern="[0-9]{10}"
+                                placeholder="Enter your mobile number (10 digits)" required autocomplete="tel" pattern="[0-9]{10}"
                                 title="Please enter a valid 10-digit mobile number">
                         </div>
 
@@ -132,19 +159,120 @@
                             <!-- password wrapper + eye icon -->
                             <div class="password-wrapper">
                                 <input type="password" id="signup-password" class="form-input"
-                                    placeholder="Create a password" autocomplete="new-password" required>
-                                <button type="button" class="toggle-password" data-target="signup-password">
+                                    placeholder="Create a strong password (min 8 characters)" autocomplete="new-password" 
+                                    minlength="8" required>
+                                <button type="button" class="toggle-password" data-target="signup-password" title="Toggle password visibility">
                                     <i class="fa-regular fa-eye"></i>
                                 </button>
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                        <!-- ADDED: Terms checkbox -->
+                        <div class="form-group" style="margin-top: 1rem;">
+                            <label style="display: flex; align-items: flex-start; gap: 0.5rem; cursor: pointer;">
+                                <input type="checkbox" required style="margin-top: 0.25rem;">
+                                <span style="font-size: 0.875rem; color: var(--text-secondary);">
+                                    I agree to ARRAutomation's terms of service and privacy policy
+                                </span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                        
+                        <p class="text-center" style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-secondary);">
+                            <i class="fas fa-lock"></i> Your data is encrypted and secure
+                        </p>
                     </form>
+
+                    <!-- ADDED: Help section -->
+                    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light); text-align: center;">
+                        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+                            Need help accessing your account?
+                        </p>
+                        <a href="https://chat.whatsapp.com/Dwqh72hxsFN5CGbCUjvBie" 
+                           style="color: var(--color-emerald); font-size: 0.875rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-whatsapp"></i> Contact Support on WhatsApp
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- ADDED: Not a client yet? CTA -->
+    <section class="section bg-light-green" style="padding: 3rem 0;">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <h3 style="margin-bottom: 1rem;">Not a Client Yet?</h3>
+                <p style="margin-bottom: 2rem; color: var(--text-secondary); font-size: 1.05rem;">
+                    Start your first project with us. Pay What You Want pricing for first 10 clients.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="services.html" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i> View Our Services
+                    </a>
+                    <a href="https://chat.whatsapp.com/Dwqh72hxsFN5CGbCUjvBie" class="btn btn-secondary"
+                       style="background-color: #25D366; color: white; border-color: #25D366;">
+                        <i class="fab fa-whatsapp"></i> Talk to Us on WhatsApp
+                    </a>
+                </div>
+                <p style="margin-top: 1.5rem; font-size: 0.875rem; color: var(--text-muted);">
+                    ✓ No obligation • ✓ Free consultation • ✓ Direct founder communication
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-3">
+                <div>
+                    <div class="brand-name">ARR<span>Automation</span></div>
+                    <p style="opacity: 0.8;">
+                        Affordable QA & Email Marketing partner helping small businesses and startups reduce manual work
+                        and ship with confidence.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/arr-automation-88aa3839b/" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://chat.whatsapp.com/Dwqh72hxsFN5CGbCUjvBie" class="social-icon"
+                            aria-label="WhatsApp" rel="noopener noreferrer" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="services.html">Services</a>
+                        <a href="portfolio.html">Portfolio</a>
+                        <a href="about.html">About Us</a>
+                        <!-- FIXED: Removed contact.html -->
+                        <a href="login.html">Client Login</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Contact</h4>
+                    <p style="opacity: 0.9; margin-bottom: 0.25rem;">
+                        📧 <a href="mailto:arrautomation001@gmail.com">arrautomation001@gmail.com</a>
+                    </p>
+                    <p style="opacity: 0.9; margin-bottom: 0.75rem;">
+                        🌍 Sonipat, India • Remote work worldwide
+                    </p>
+                    <div class="copyright">
+                        &copy; 2025 ARRAutomation. All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
