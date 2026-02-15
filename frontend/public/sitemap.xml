@@ -19,11 +19,11 @@
     <priority>0.8</priority>
   </url>
 
-  <url>
+  <!-- <url>
     <loc>https://arrautomation.com/contact.html</loc>
     <lastmod>2025-12-13</lastmod>
     <priority>0.8</priority>
-  </url>
+  </url> -->
 
   <url>
     <loc>https://arrautomation.com/login.html</loc>

@@ -61,43 +61,43 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
-    // ======================================================
-    // 4️⃣ CONTACT FORM SUBMISSION
-    // ======================================================
-    const contactForm = document.getElementById('contact-form');
+    // // ======================================================
+    // // 4️⃣ CONTACT FORM SUBMISSION
+    // // ======================================================
+    // const contactForm = document.getElementById('contact-form');
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();  // Stop page refresh
+    // if (contactForm) {
+    //     contactForm.addEventListener('submit', async (e) => {
+    //         e.preventDefault();  // Stop page refresh
 
-            const submitBtn = contactForm.querySelector('button');
-            const originalText = submitBtn.innerText;
+    //         const submitBtn = contactForm.querySelector('button');
+    //         const originalText = submitBtn.innerText;
 
-            // Disable button → avoid double clicks
-            submitBtn.innerText = 'Sending...';
-            submitBtn.disabled = true;
+    //         // Disable button → avoid double clicks
+    //         submitBtn.innerText = 'Sending...';
+    //         submitBtn.disabled = true;
 
-            // Form data collected from inputs
-            const data = {
-                name: document.getElementById('name').value.trim(),
-                email: document.getElementById('email').value.trim().toLowerCase(),
-                phone: document.getElementById('phone').value.trim(),
-                service: document.getElementById('service').value.trim(),
-                message: document.getElementById('message').value.trim()
-            };
+    //         // Form data collected from inputs
+    //         const data = {
+    //             name: document.getElementById('name').value.trim(),
+    //             email: document.getElementById('email').value.trim().toLowerCase(),
+    //             phone: document.getElementById('phone').value.trim(),
+    //             service: document.getElementById('service').value.trim(),
+    //             message: document.getElementById('message').value.trim()
+    //         };
 
-            // Send request to backend → /api/contact
-            const result = await apiRequest('/api/contact', data);
+    //         // Send request to backend → /api/contact
+    //         const result = await apiRequest('/api/contact', data);
 
-            alert(result.message);  // Show backend response
+    //         alert(result.message);  // Show backend response
 
-            if (result.success) contactForm.reset();
+    //         if (result.success) contactForm.reset();
 
-            // Reset button
-            submitBtn.innerText = originalText;
-            submitBtn.disabled = false;
-        });
-    }
+    //         // Reset button
+    //         submitBtn.innerText = originalText;
+    //         submitBtn.disabled = false;
+    //     });
+    // }
 
 
     // ======================================================
