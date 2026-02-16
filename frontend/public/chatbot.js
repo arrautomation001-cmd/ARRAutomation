@@ -5,7 +5,7 @@
 
 const CHATBOT_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:3000'
-    : 'https://arrautomation-backend.onrender.com';
+    : 'https://arrautomation-backend-1.onrender.com';
 
 class Chatbot {
     constructor() {
