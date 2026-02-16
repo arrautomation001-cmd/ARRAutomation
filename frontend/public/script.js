@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     const BASE_URL = isLocal
         ? 'http://localhost:3000'
-        : 'https://arrautomation-backend.onrender.com';
+        : 'https://arrautomation-backend-1.onrender.com';
 
     // ======================================================
     // 2️⃣ SMOOTH SCROLL FOR ALL ANCHOR LINKS
