@@ -139,6 +139,20 @@
                         </a>
                     </div>
 
+            <section id="contact-lead">
+                        <h2>Get a Free QA Audit</h2>
+                        <p>We’ll review your site and email you insights within 24 hours.</p>
+
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Your name" required />
+                <input type="email" id="email" placeholder="Your email" required />
+                <textarea id="message" placeholder="Briefly describe your project" required></textarea>
+                <button type="submit">Request Free Audit</button>
+            </form>
+
+            <p id="formStatus"></p>
+            </section>
+
                     <!-- ✅ Trust Signal (NEW) -->
                     <p style="margin-top: 1rem; font-size: 0.9rem; color: #6B7280;">
                         ✓ Real projects • ✓ Clear pricing • ✓ Direct communication with the founder
@@ -606,6 +620,39 @@
         </div>
     </footer>
 
+    <script>
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const status = document.getElementById("formStatus");
+  status.textContent = "Submitting...";
+
+  const data = {
+    name: document.getElementById("name").value.trim(),
+    email: document.getElementById("email").value.trim(),
+    message: document.getElementById("message").value.trim()
+  };
+
+  try {
+    const response = await fetch("https://www.arrautomation.com/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      status.textContent = "Thanks! We’ll contact you within 24 hours.";
+      document.getElementById("contactForm").reset();
+    } else {
+      status.textContent = result.message || "Submission failed.";
+    }
+  } catch (error) {
+    status.textContent = "Server error. Please try again later.";
+  }
+});
+</script>
 
 
     <script src="script.js"></script>

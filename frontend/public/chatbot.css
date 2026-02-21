@@ -593,3 +593,74 @@
         display: none !important;
     }
 }
+/* ===== Lead Form (ARRAutomation Style) ===== */
+#contact-lead {
+  max-width: 480px;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+#contact-lead h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+#contact-lead p {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#contactForm input,
+#contactForm textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 13px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #f9fafb;
+  outline: none;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+  border-color: #22c55e;
+  background: #ffffff;
+}
+
+#contactForm textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+#contactForm button {
+  margin-top: 6px;
+  padding: 11px;
+  font-size: 14px;
+  font-weight: 600;
+  background: #22c55e;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#contactForm button:hover {
+  background: #16a34a;
+}
+
+#formStatus {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #16a34a;
+}
