@@ -219,11 +219,16 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const clearError = (input) => {
-        const formGroup = input.closest('.form-group');
+    const formGroup = input.closest('.form-group');
+    
+    // Safety check: Only look for the errorDiv if formGroup actually exists
+    if (formGroup) {
         const errorDiv = formGroup.querySelector('.error-message');
         if (errorDiv) errorDiv.remove();
-        input.style.borderColor = '';
-    };
+    }
+    
+    input.style.borderColor = '';
+};
 
     // Real-time validation for email inputs
     document.querySelectorAll('input[type="email"]').forEach(input => {
