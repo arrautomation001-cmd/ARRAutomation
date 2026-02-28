@@ -582,14 +582,3 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('%cInterested in our services? Visit: https://arrautomation.com', 'font-size: 12px; color: #3b82f6;');
 
 });
-
-// ======================================================
-// EXTERNAL: Service Worker Registration (PWA - Optional)
-// ======================================================
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-            .then(() => console.log('✅ Service Worker registered'))
-            .catch(() => console.log('❌ Service Worker registration failed'));
-    });
-}
